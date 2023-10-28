@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    --primary-dark-cyan : hsl(158, 36%, 37%);
+    --primary-cream : hsl(30, 38%, 92%); 
+    --neutral-dark-blue : hsl(212, 21%, 14%);
+    --neutral-grayish-blue : hsl(228, 12%, 48%);
+    --neutral-white : hsl(0, 0%, 100%);
+    --font-size-14 : 14px;
+    --background : #f3eae3;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    font-family: 'Montserrat';
+    width: 500px;
+    height: 372px;
+    background-color: var(--neutral-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-radius: 8px;
+}
+
+.card .card-description {
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 500;
+    padding: 20px 0;
+}
+
+
+.card .card-description .title {
+    text-transform: uppercase;
+    font-size: 8px;
+    color: #95969B;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.card .card-description .type {
+    font-family: 'Fraunces';
+    text-transform: capitalize;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--neutral-dark-blue);
+}
+
+.card .card-description .description {
+    color: #95969B;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.card .card-description .price {
+    font-family: 'Fraunces';
+    color: var(--primary-dark-cyan);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: start;
+
+}
+
+.card .card-description .price span {
+    font-size: 10px;
+    font-family: 'Montserrat';
+    color: #95969B;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.card .card-description .button-cart img {
+    width: 11px;
+}
+
+.card .card-description .button-cart button {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    background-color: var(--primary-dark-cyan);
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-image {
+    width: 100%;
+    border-radius: 8px 0px 0px 8px;
+    background-image: url('./images/image-product-desktop.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 376px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: auto;
+        gap:0;
+    }
+    .card .card-image {
+        min-height: 250px;
+        border-radius: 8px 8px 0px 0px;
+        background-position: top;
+        background-size: contain;
+        background-image: url('./images/image-product-mobile.jpg');
+    }
+    
+    .card .card-description {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 12px;
+    }
+
+    .card .card-description .title {
+        font-size: 12px;
+    }
+
+    .card .card-description .type {
+        font-size: 30px;
+    }
+
+    .card .card-description .description {
+        width: 296px;
+        font-size: 14px;
+    }
+
+    .card .card-description .price {
+        font-size: 28px;
+        column-gap: 16px;
+    }
+
+    .card .card-description .price span {
+        font-size: 12px;
+    }
+
+    .card .card-description .button-cart img {
+        width: 14px;
+    }
+
+    .card .card-description .button-cart button {
+        padding: 15px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+}
